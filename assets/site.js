@@ -17,15 +17,19 @@
 
   /* ---------- reveals ---------- */
   var revealEls = $$('.rv, .rv-pop');
-  if (still || !('IntersectionObserver' in window)) {
-    revealEls.forEach(function (el) { el.classList.add('in'); });
-  } else {
+  if (!still && 'IntersectionObserver' in window) {
+    // Only hide what starts below the first screen; everything visible at load stays visible.
+    var fold = window.innerHeight;
+    var later = revealEls.filter(function (el) { return el.getBoundingClientRect().top > fold; });
+    later.forEach(function (el) { el.classList.add('pre'); });
+    // arm the transitions after the hidden state has applied, so hiding is instant
+    raf(function () { raf(function () { later.forEach(function (el) { el.classList.add('armed'); }); }); });
     var ro = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-    revealEls.forEach(function (el) { ro.observe(el); });
+    later.forEach(function (el) { ro.observe(el); });
   }
 
   /* ---------- count-up stats ---------- */
