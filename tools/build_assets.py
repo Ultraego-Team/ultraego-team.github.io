@@ -169,13 +169,19 @@ def build_video(game):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--game", default="/Volumes/MinerFighterDev/ci/inkbound")
+    ap.add_argument("--logo", help="logo PNG with real alpha; without it the boot wordmark is cut out of its background")
     ap.add_argument("--fonts", required=True, help="dir with LilitaOne.ttf and Nunito.ttf (OG image only)")
     a = ap.parse_args()
     game, fonts = Path(a.game), Path(a.fonts)
     IMG.mkdir(parents=True, exist_ok=True)
     art = game / "Unity/Assets/InkboundForge"
 
-    logo = key_wordmark(art / "Resources/BootSplash/boot_splash_wordmark.png")
+    if a.logo:
+        # owner's final logo with real alpha (preferred, no cutout needed)
+        logo = Image.open(a.logo).convert("RGBA")
+        logo = logo.crop(logo.getbbox())
+    else:
+        logo = key_wordmark(art / "Resources/BootSplash/boot_splash_wordmark.png")
     save_set(logo, "logo", (480, 960), alpha=True)
 
     icon = Image.open(art / "MobileIcons/inkbound-forge-icon-ios-1024.png").convert("RGB")
