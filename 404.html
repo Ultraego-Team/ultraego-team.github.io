@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found - Tink Tink Boom: Dig Survivor</title>
+<meta name="description" content="This tunnel caved in. Head back to the Tink Tink Boom home page.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#060915">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/lilita-one-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .lost{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;isolation:isolate;overflow:hidden;padding:100px var(--pad) 60px}
+  .lost-bg{position:absolute;inset:0;z-index:-2}
+  .lost-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+  .lost::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 55% at 50% 45%,rgba(6,9,21,.4),rgba(6,9,21,.92) 80%)}
+  .lost .logo{width:min(340px,80vw);height:auto;margin:0 auto 24px;filter:drop-shadow(0 14px 26px rgba(0,0,0,.5))}
+  .lost .code{font-family:var(--display);font-size:clamp(90px,26vw,180px);line-height:.9;color:var(--gold);text-shadow:0 5px 0 #6a3a06,0 14px 30px rgba(0,0,0,.5)}
+  .lost h1{font-size:clamp(34px,8vw,56px);margin:10px 0 12px}
+  .lost .lede{margin:0 auto 28px}
+  .lost .row{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<main class="lost">
+  <div class="lost-bg" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset="/assets/img/cavern-ink-720.avif">
+      <source type="image/webp" srcset="/assets/img/cavern-ink-720.webp">
+      <img src="/assets/img/cavern-ink-360.jpg" width="720" height="960" alt="">
+    </picture>
+  </div>
+  <div>
+    <a href="/" aria-label="Tink Tink Boom home">
+      <picture>
+        <source type="image/avif" srcset="/assets/img/logo-480.avif">
+        <source type="image/webp" srcset="/assets/img/logo-480.webp">
+        <img class="logo" src="/assets/img/logo-480.png" width="480" height="244" alt="Tink Tink Boom">
+      </picture>
+    </a>
+    <div class="code" aria-hidden="true">404</div>
+    <h1 class="chunk">You dug <span class="hot">too deep.</span></h1>
+    <p class="lede">This tunnel caved in. The page you are looking for is not down here.</p>
+    <div class="row">
+      <a class="pill" href="/">Back to the surface</a>
+      <a class="badge" href="https://apps.apple.com/app/id6823286116" rel="noopener"><img src="/assets/img/app-store-badge.svg" width="150" height="50" style="height:50px" alt="Download on the App Store"></a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
