@@ -10,6 +10,7 @@ appnexus.com, 17779, RESELLER
 appnexus.com, 17973, RESELLER, f5ab79cb980f11d1
 appnexus.com, 6849, RESELLER
 bid-matrix.com, f2c71a45ea149366, RESELLER
+bigo.sg, nzowptn80d, DIRECT
 bigo.sg, adidz3dyfp, RESELLER
 bluexad.ai, 1996418805747683328, RESELLER
 bold-win.com, 1013, RESELLER, 71746737d0bab951
