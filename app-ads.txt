@@ -178,3 +178,5 @@ pubmatic.com, 167346, RESELLER, 5d62403b186f2ace
 
 # Meta Audience Network (Top Down Control, property 4046204805683044)
 facebook.com, 4046204805683044, RESELLER, c3e20eee3f780d68
+facebook.com, 4046204805683044, DIRECT, c3e20eee3f780d68
+facebook.com, 2268866259913131, DIRECT, c3e20eee3f780d68
